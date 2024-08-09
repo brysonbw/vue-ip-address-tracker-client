@@ -1,0 +1,63 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+  /* Cesium container */
+  #cesiumContainer {
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cesium-widget-credits{
+    display:none !important;
+  }
+
+  /* Cesium infoBox */
+  .cesium-infoBox {
+    border-radius: 5px;
+  }
+
+  .cesium-infoBox-title {
+    visibility
+    : hidden;
+  }
+
+  .cesium-infoBox-description {
+    padding: 20px;
+  }
+
+    /* Cesium Overlay */
+  .overlay-button-container {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+
+  .overlay-button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  /* Cesium infoBox responsive styles for mobile screens */
+  @media (max-width: 600px) {
+  .cesium-infoBox {
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto;
+  }
+}
