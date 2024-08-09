@@ -33,10 +33,6 @@ pnpm install
 
 ### .env
 
-```bash
-cp .env.example .env.development
-```
-
 ```text
 VITE_CESIUM_ION_TOKEN=
 VITE_API_URL=
