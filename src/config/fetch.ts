@@ -27,7 +27,6 @@ export async function fetchClient ({ url, method = 'GET', parameters, body, conf
       body,
       headers: {
         ...config?.headers,
-        'Content-Type': 'application/json',
       },
       ...config,
     })

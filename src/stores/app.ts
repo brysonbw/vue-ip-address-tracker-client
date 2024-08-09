@@ -45,15 +45,14 @@ export const useAppStore = defineStore('app', {
       return result
     },
     async getUserIpAddress () {
-      const appStore = useAppStore()
-      const url = `${appStore.apiFullPath}uip`
+      const url = `https://api.ipify.org?format=json`
       const result = await fetchClient({
         url,
       })
-      if (!result.status) {
+      if (!result.ip) {
         return { status: false }
       }
-      this.userIP = result.data
+      this.userIP = result.ip
       return { status: true }
     },
     async getUserIpAddressData () {
