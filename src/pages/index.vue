@@ -21,15 +21,12 @@
     return appStore.acceptedGeolocation
   })
 
-  // On init/created
-  // Fetch IP and IP info from current anonymous user
-  if (acceptedGeolocation.value) {
-    await appStore.getUserIpAddressData()
-  }
-
   onMounted(async () => {
     const cesiumLoaded = await cesiumStore.loadCesium()
     if (cesiumLoaded.status) {
+      if (acceptedGeolocation.value) {
+        await appStore.getUserIpAddressData()
+      }
       console.log('cesium loaded...')
       appStore.mapLoaded = true
       if (appStore.userIP && appStore.ipInfo.ip && appStore.ipInfo.lat && appStore.ipInfo.lon) {
@@ -39,6 +36,17 @@
         const name = `YOU\n${isp ?? ''}\n${userIP || ip}`
         await cesiumStore.addEntity({ ip: userIP || ip, name, lat, lon, flyTo: true })
       }
+
+      const viewer = cesiumStore.cesium.viewer
+
+      // Cesium event listeners
+      // Selected entity
+      viewer?.selectedEntityChanged.addEventListener(function (selectedEntity) {
+        // Disable entity selection and infoBox if entity is NOT IP entity
+        if (selectedEntity?.properties?.type === undefined) {
+          viewer.selectedEntity = undefined
+        }
+      })
     }
   })
 </script>
