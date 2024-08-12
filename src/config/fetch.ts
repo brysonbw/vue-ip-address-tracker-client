@@ -54,23 +54,6 @@ export async function fetchClient ({
 }
 
 /**
- * Search params (object) to query string
- * @param paramsObj
- * @param fetchURL
- */
-function searchParamsToString (
-  paramsObj: { [key: string]: string },
-  fetchURL: boolean = true
-): string | URLSearchParams {
-  if (typeof paramsObj !== 'object' || Object.keys(paramsObj)?.length === 0) {
-    return ''
-  }
-  const searchParams = new URLSearchParams(paramsObj)
-  searchParams.toString()
-  return fetchURL ? `?${searchParams}` : searchParams
-}
-
-/**
  * Convert FormData to JSON
  * @param formData
  */
