@@ -91,6 +91,9 @@ export const useCesiumStore = defineStore('cesium', {
           disableDepthTestDistance: Number.POSITIVE_INFINITY,
           verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
         },
+        properties: {
+          type: 'ip',
+        },
         description: `
         <div style="
           font-family: 'Helvetica Neue', Arial, sans-serif; 
