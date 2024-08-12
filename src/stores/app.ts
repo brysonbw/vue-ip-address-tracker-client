@@ -19,6 +19,7 @@ export const useAppStore = defineStore('app', {
       timezone: null,
     },
     acceptedGeolocation: false,
+    webglEnabled: false,
     mapLoaded: false,
   }),
   actions: {

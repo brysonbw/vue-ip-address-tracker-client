@@ -19,6 +19,7 @@ export type AppStore = {
       timezone?: string | null
     }
     acceptedGeolocation: boolean
+    webglEnabled: boolean
     mapLoaded: boolean
   }
 

@@ -14,8 +14,13 @@ export const useCesiumStore = defineStore('cesium', {
   }),
   actions: {
     async loadCesium () {
+      const appStore = useAppStore()
       this.loading = true
       try {
+        //! WebGL not enabled
+        if (!appStore.webglEnabled) {
+          throw new Error('Could not load map. Browser or device may not support WebGL.')
+        }
         Cesium.Ion.defaultAccessToken = import.meta.env.VITE_CESIUM_ION_TOKEN
         const viewer = new Cesium.Viewer('cesiumContainer', {
           terrain: Cesium.Terrain.fromWorldTerrain(),
