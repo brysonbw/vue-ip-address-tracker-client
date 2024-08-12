@@ -40,7 +40,7 @@ body {
   }
 
   button.cesium-infoBox-camera {
-    display: none;
+    display: none !important;
   }
 
     /* Cesium Overlay */
