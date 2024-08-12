@@ -9,6 +9,7 @@
     >
       <template #activator="{ props }">
         <v-btn
+          class="text-black"
           icon="mdi-earth-minus"
           variant="outlined"
           v-bind="props"
