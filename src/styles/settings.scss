@@ -39,6 +39,10 @@ body {
     padding: 20px;
   }
 
+  button.cesium-infoBox-camera {
+    display: none;
+  }
+
     /* Cesium Overlay */
   .overlay-button-container {
     position: absolute;
