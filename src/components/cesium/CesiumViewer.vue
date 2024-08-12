@@ -9,9 +9,9 @@
     >
       <template #activator="{ props }">
         <v-btn
-          class="text-black"
+          color="#212121"
           icon="mdi-earth-minus"
-          variant="outlined"
+          style="border: 0.5px solid #424242"
           v-bind="props"
           @click="resetCameraViewGlobe"
         />
