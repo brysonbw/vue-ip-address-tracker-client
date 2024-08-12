@@ -19,6 +19,9 @@ export const useCesiumStore = defineStore('cesium', {
         Cesium.Ion.defaultAccessToken = import.meta.env.VITE_CESIUM_ION_TOKEN
         const viewer = new Cesium.Viewer('cesiumContainer', {
           terrain: Cesium.Terrain.fromWorldTerrain(),
+          baseLayer: new Cesium.ImageryLayer(new Cesium.OpenStreetMapImageryProvider({
+            url: 'https://tile.openstreetmap.org/',
+          })),
           navigationHelpButton: false,
           infoBox: true,
           baseLayerPicker: false,
