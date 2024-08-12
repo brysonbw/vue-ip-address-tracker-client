@@ -27,12 +27,9 @@ export const useAppStore = defineStore('app', {
         return
       }
       const appStore = useAppStore()
-      const url = `${appStore.apiFullPath}country,city`
+      const url = `${appStore.apiFullPath}country,city?ipAddress=${ipAddress}`
       const result = await fetchClient({
         url,
-        parameters: {
-          ipAddress,
-        },
       })
       if (result.status && result.data) {
         const [lat, lon] = result.data.loc.split(',')
