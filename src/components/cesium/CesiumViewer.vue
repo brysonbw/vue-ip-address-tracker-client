@@ -22,6 +22,7 @@
 
 <script setup lang="ts">
   import 'cesium/Build/Cesium/Widgets/widgets.css'
+  import { computed } from 'vue'
   import { useCesiumStore } from '@/stores/cesium'
   import { useAppStore } from '@/stores/app'
 
