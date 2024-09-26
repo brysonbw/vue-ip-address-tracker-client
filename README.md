@@ -8,9 +8,6 @@ IP Address Tracker (web app). Track and analyze IP addresses. Utilize the app to
 
 </div>
 
-## Visit:
-https://ip-address-tracker-io.vercel.app/
-
 ## Running Locally
 
 ```bash
